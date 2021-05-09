@@ -1,7 +1,8 @@
 {
-  "name": "derik-electron",
+  "name": "derik-app",
   "version": "0.1.0",
   "private": true,
+  "main": "./electron/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -16,8 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "npm run tsc && npm run electron ./electron/build/main.js",
-    "tsc": "tsc ./electron/"
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -38,8 +38,9 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.1.0",
     "electron": "^12.0.7",
-    "typescript": "^4.2.4"
-  },
-  "license": "GPL-3.0"
+    "electron-builder": "^22.11.1",
+    "wait-on": "^5.3.0"
+  }
 }
