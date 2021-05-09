@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ./electron/main.js",
+    "electron": "npm run tsc && npm run electron ./electron/build/main.js",
     "tsc": "tsc ./electron/"
   },
   "eslintConfig": {
@@ -40,5 +40,6 @@
   "devDependencies": {
     "electron": "^12.0.7",
     "typescript": "^4.2.4"
-  }
+  },
+  "license": "GPL-3.0"
 }
